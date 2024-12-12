@@ -70,7 +70,8 @@ class Usuario(AbstractBaseUser):
 
     @property
     def is_staff(self):
-        return self.is_admin
+        return self.is_admin 
 
+        
     def tem_perfil(self, perfil_nome):
         return self.perfis.filter(nome=perfil_nome).exists()
