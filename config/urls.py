@@ -3,4 +3,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('autenticacao.urls')),
+    path('core/', include('core.urls')),
 ]
