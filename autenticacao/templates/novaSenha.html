@@ -2,8 +2,8 @@
 
 {% block conteudo %}
 <div class="container">
-    <h2>Login</h2>
-    <form method="POST" action="{% url 'autenticacao:login' %}">
+    <h2>Trocar Senha</h2>
+    <form method="POST" action="{% url 'autenticacao:novaSenha' %}">
         {% csrf_token %}
         <div class="form-group">
             <label for="txtEmail">E-mail</label>
@@ -11,16 +11,16 @@
             <div id="divEmailError" class="error-message"> </div>
         </div>
         <div class="form-group hidden-group" id="divSenha">
-            <label for="txtSenha">Senha</label>
+            <label for="txtNovaSenha">Nova Senha</label>
             <input type="password" class="form-control" id="txtSenha" name="txtSenha" required autocomplete="new-password">
         </div>
-        <div class="form-group hidden-group" id="divPerfil">
+        {% comment %} <div class="form-group hidden-group" id="divPerfil">
             <label for="perfil">Perfil</label>
             <select class="form-control" id="slcPerfil" name="slcPerfil" required></select>
-        </div>
+        </div> {% endcomment %}
         <div id="divSpace" class="space"> </div>
-        <button type="submit" class="btn btn-light">Entrar</button>
-        <a href="#" id="btnEsqueciSenha" class="btn btn-light">Esqueci minha senha</a>
+        <button type="submit" class="btn btn-light">Enviar E-mail</button>
+        <a href="#" id="btnVoltar" class="btn btn-light">Voltar</a>
     </form>
 </div>
 
@@ -30,7 +30,6 @@
             var email = $(this).val();
             $('#divPerfil').addClass('hidden-group');
             $('#divSenha').addClass('hidden-group');
-            $('#slcPerfil').empty();
             $('#divEmailError').text(' ').removeClass('visible');
 
             if (email.length > 0) {
@@ -39,16 +38,7 @@
                     data: {'email': email},
                     success: function(data) {
                         if (data.usuario_existe) {
-                            if (data.perfis.length > 0) {
-                                $('#slcPerfil').empty();
-                                data.perfis.forEach(function(perfil) {
-                                    $('#slcPerfil').append(new Option(perfil.nome, perfil.id));
-                                });
-                                $('#divPerfil').removeClass('hidden-group');
-                                $('#divSenha').removeClass('hidden-group');
-                            } else {
-                                toastr.error("Nenhum perfil encontrado para este e-mail.", "Erro");
-                            }
+                            $('#divSenha').removeClass('hidden-group');
                         } else {
                             $('#divEmailError').text('.').addClass('visible');
                         }
@@ -57,10 +47,10 @@
             }
         });
 
-        $('#btnEsqueciSenha').click(function(event) {
+        $('#btnVoltar').click(function(event) {
             event.preventDefault();
-            toastr.info('Se você esqueceu sua senha contate o administrador do sistema.');
-            window.location.href = "http://127.0.0.1:8000/novaSenha/";
+            toastr.info('Voltou???');
+            window.location.href = "http://127.0.0.1:8000/";
         });
     });
 </script>
