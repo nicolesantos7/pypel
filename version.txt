@@ -1,0 +1,29 @@
+PYPEL - SISTEMA DE GERENCIAMENTO DE PAPELARIA
+VERSÃO 0.01 - sistema de autenticação concluído - 22/01/2025
+
+https://github.com/nicolesantos7/pypel
+Nicole Caroline Santos
+nicolecarolinesantos07@gmail.com
+
+1. ABNT
+SANTOS, Nicole C. PYPEL - Sistema de Gerenciamento de Papelaria.
+[S.l.]: [s.n.], 2025. Disponível em: https://github.com/nicolesantos7/pypel 
+Acesso em [data de acesso]
+
+2. IEEE
+N. C. SANTOS, "PYPEL - Sistema de Gerenciamento de Papelaria" [online].
+Disponível em: https://github.com/nicolesantos7/pypel
+[Acesso em: dia, mes, ano]
+
+3. APA
+Santos, N. C. (2025). PYPEL - Sistema de Gerenciamento de Papelaria.
+Acesso em: [data de acesso], de https://github.com/nicolesantos7/pypel 
+
+4. BibTeX
+@misc{nicolesantos2025pypel,
+    author = {Santos, Nicole Caroline},
+    title = {PYPEL - Sistema de Gerenciamento de Papelaria},
+    year = {2025},
+    howpublished = {\url{https://github.com/nicolesantos7/pypel}},
+    note = {Acessado em: data de acesso}
+}
